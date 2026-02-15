@@ -63,7 +63,7 @@ description: サンプル株式会社の公式サイト
     <ul class="news-list">
       {% for post in collections.blog | reverse | slice(0,3) %}
         <li class="news-item">
-          <a href="{{ post.url }}">
+          <a href="{{ post.url | url }}">
             <span class="news-date">
               {{ post.date | formatDate }}
             </span>
@@ -75,7 +75,7 @@ description: サンプル株式会社の公式サイト
       {% endfor %}
     </ul>
     <div class="center">
-      <a href="/blog/" class="btn-outline">View All</a>
+      <a href="{{ '/blog/' | url }}" class="btn-outline">View All</a>
     </div>
   </div>
 </section>
@@ -85,6 +85,6 @@ description: サンプル株式会社の公式サイト
   <div class="container center">
     <h2>Business Partnership</h2>
     <p>お取引に関するお問い合わせはこちらから。</p>
-    <a href="/contact/" class="btn-gold">Contact Us</a>
+    <a href="{{ '/contact/' | url }}" class="btn-gold">Contact Us</a>
   </div>
 </section>

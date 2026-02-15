@@ -9,7 +9,7 @@ title: News
     <ul>
       {% for post in collections.blog | reverse %}
         <li>
-          <a href="{{ post.url }}">
+          <a href="{{ post.url | url }}">
             {{ post.date }} - {{ post.data.title }}
           </a>
         </li>
