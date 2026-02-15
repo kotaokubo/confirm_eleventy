@@ -1,72 +1,264 @@
-/* ベースリセット */
+/* ========================================
+   Design System + Full Stylesheet
+======================================== */
+
+:root {
+  /* Brand */
+  --color-primary: #142a4d;
+  --color-primary-dark: #0c1d35;
+  --color-accent: #c5a86a;
+
+  /* Surface */
+  --color-bg: #ffffff;
+  --color-bg-light: #f9f9f9;
+
+  /* Text */
+  --color-text: #0c1d35;
+  --color-text-muted: #777777;
+  --color-text-light: #999999;
+
+  /* Border */
+  --color-border: #e6e6e6;
+}
+
+/* ========================================
+   Base
+======================================== */
+
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  margin: 0;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  color: var(--color-text);
+  background: var(--color-bg);
   line-height: 1.7;
-  color: #333;
-  background-color: #ffffff;
 }
 
-/* ヘッダー */
-header {
-  padding: 20px 40px;
-  border-bottom: 1px solid #eee;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-header h1 {
-  font-size: 20px;
-  font-weight: 600;
-}
-
-nav a {
-  margin-left: 20px;
+a {
+  color: inherit;
   text-decoration: none;
-  color: #444;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* ========================================
+   Layout
+======================================== */
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section {
+  padding: 100px 0;
+}
+
+.section-title {
+  font-size: 28px;
+  letter-spacing: 2px;
+  margin-bottom: 40px;
+  font-weight: 500;
+}
+
+.center {
+  text-align: center;
+}
+
+/* ========================================
+   Header
+======================================== */
+
+header {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.logo {
+  margin: 0;
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-left: auto;
+}
+
+.nav-links a {
   font-size: 14px;
-  transition: color 0.2s ease;
+  letter-spacing: 1px;
 }
 
-nav a:hover {
-  color: #b89b5e; /* ゴールド系 */
+/* ========================================
+   Hero
+======================================== */
+
+.hero {
+  height: 70vh;
+  background: var(--color-primary);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
-/* メイン */
-main {
-  max-width: 900px;
-  margin: 60px auto;
-  padding: 0 20px;
+.hero h1 {
+  font-size: 42px;
+  font-weight: 400;
+  letter-spacing: 3px;
 }
 
-h1, h2, h3 {
-  margin-bottom: 20px;
+.hero p {
+  margin-top: 20px;
+  color: var(--color-text-muted);
 }
 
-p, li {
-  margin-bottom: 12px;
+/* ========================================
+   Grid
+======================================== */
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
 }
 
-/* ブログ一覧 */
-ul {
-  list-style: none;
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
 }
 
-ul li {
-  margin-bottom: 15px;
-}
+/* ========================================
+   Feature Card
+======================================== */
 
-/* フッター */
-footer {
-  border-top: 1px solid #eee;
+.feature-card {
   padding: 30px;
+  border: 1px solid var(--color-border);
+  transition: 0.3s ease;
+}
+
+.feature-card:hover {
+  border-color: var(--color-accent);
+}
+
+/* ========================================
+   Background
+======================================== */
+
+.bg-light {
+  background: var(--color-bg-light);
+}
+
+/* ========================================
+   Buttons
+======================================== */
+
+.btn-primary {
+  display: inline-block;
+  padding: 12px 30px;
+  border: 1px solid var(--color-primary);
+  background: var(--color-primary);
+  color: #ffffff;
+  font-size: 14px;
+  letter-spacing: 1px;
+  transition: 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: var(--color-primary-dark);
+}
+
+.btn-outline {
+  display: inline-block;
+  padding: 10px 25px;
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
+  font-size: 14px;
+  margin-top: 30px;
+  transition: 0.3s ease;
+}
+
+.btn-outline:hover {
+  background: var(--color-primary);
+  color: #ffffff;
+}
+
+/* ========================================
+   News
+======================================== */
+
+.news-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.news-item {
+  border-bottom: 1px solid var(--color-border);
+  padding: 20px 0;
+}
+
+.news-item a {
+  display: flex;
+  gap: 20px;
+}
+
+.news-date {
+  color: var(--color-text-light);
+  font-size: 14px;
+  min-width: 120px;
+}
+
+.news-title {
+  font-size: 16px;
+}
+
+/* ========================================
+   Footer
+======================================== */
+
+footer {
+  padding: 60px 0;
+  border-top: 1px solid var(--color-border);
   text-align: center;
   font-size: 13px;
-  color: #777;
+  color: var(--color-text-muted);
+}
+
+/* ========================================
+   Responsive
+======================================== */
+
+@media (max-width: 768px) {
+  .grid-2,
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .section {
+    padding: 60px 0;
+  }
 }
