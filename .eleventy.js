@@ -13,9 +13,8 @@ module.exports = function(eleventyConfig) {
       input: "src",
       includes: "_includes",
       data: "_data",
-      assets: "assets",
-      blog: "blog",
       output: "dist"
-    }
+    },
+    pathPrefix: "/confirm_eleventy"
   };
 };
