@@ -65,7 +65,7 @@ description: サンプル株式会社の公式サイト
         <li class="news-item">
           <a href="{{ post.url }}">
             <span class="news-date">
-              {{ post.date }}
+              {{ post.date | formatDate }}
             </span>
             <span class="news-title">
               {{ post.data.title }}
